@@ -1,0 +1,78 @@
+<!-- /responsive-iphone.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive iPhone Layout</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #f4f4f4;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 2vw;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 6vw;
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      font-size: 4vw;
+      color: #555;
+      max-width: 90vw;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 5vh;
+      padding: 3vw 6vw;
+      font-size: 4vw;
+      border: none;
+      border-radius: 1vw;
+      background-color: #007bff;
+      color: white;
+    }
+
+    /* Media Query for iPhone SE or <375px width */
+    @media screen and (max-width: 375px) {
+      h1 { font-size: 7vw; }
+      p, button { font-size: 5vw; }
+    }
+
+    /* Media Query for iPhone 12/13 Pro Max (~428px) */
+    @media screen and (min-width: 400px) {
+      h1 { font-size: 5vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome</h1>
+    <p>This layout scales beautifully on all iPhones.</p>
+    <button onclick="alertResize()">Test Width</button>
+  </div>
+
+  <script>
+    function alertResize() {
+      alert("Current width: " + window.innerWidth + "px");
+    }
+
+    window.addEventListener("resize", () => {
+      console.log("Resized to:", window.innerWidth);
+    });
+  </script>
+</body>
+</html>
